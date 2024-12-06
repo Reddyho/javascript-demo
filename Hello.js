@@ -1,0 +1,1 @@
+document.write("<h3>java script code created by honey</h3>");

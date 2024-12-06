@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Clock</title>
+    <style>
+        #clock-container {
+            font-size: 2em;
+            font-family: Arial, sans-serif;
+            white-space: pre-wrap; /* Allows line breaks */
+        }
+    </style>
+    <script>
+        function startClock() {
+            setInterval(() => {
+                const now = new Date();
+                const hours = String(now.getHours()).padStart(2, '0');
+                const minutes = String(now.getMinutes()).padStart(2, '0');
+                const seconds = String(now.getSeconds()).padStart(2, '0');
+                const currentTime = `${hours}:${minutes}:${seconds}`;
+ 
+                // Append the time to the clock-container
+                const clockContainer = document.getElementById('clock-container');
+                clockContainer.textContent += currentTime + '\n'; // Adds new time with a line break
+            }, 1000);
+        }
+ 
+        // Start the clock when the page loads
+        document.addEventListener("DOMContentLoaded", startClock);
+    </script>
+</head>
+<body>
+    <h1>Current Time:</h1>
+    <div id="clock-container"></div>
+</body>
+</html>

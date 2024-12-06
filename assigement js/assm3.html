@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second lowest and Greatest</title>
+    <script>
+        function findSecondLowestAndGreatest(arr) {
+           
+            arr.sort((a, b) => a - b);
+            
+            let secondLowest = arr[1];
+            let secondGreatest = arr[arr.length - 2];
+            
+            return [secondLowest, secondGreatest];
+        }
+ 
+        document.addEventListener("DOMContentLoaded", () => {
+            const sampleArray = [1, 2, 3, 4, 5];
+            const result = findSecondLowestAndGreatest(sampleArray);
+            document.getElementById("output").textContent = `Second Lowest: ${result[0]}, Second Greatest: ${result[1]}`;
+        });
+    </script>
+</head>
+<body>
+    <h1>Second Lowest and Greatest</h1>
+    <p id="output">Processing...</p>
+</body>
+</html>
